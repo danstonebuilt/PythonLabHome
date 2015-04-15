@@ -1,2 +1,2 @@
 # PythonLabHome
-All issues about Python Studie
+All issues about Python Studies
