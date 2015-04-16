@@ -1,0 +1,40 @@
+p = Publisher(name='Apress',
+		      address='2855 Telegraph Ave.',
+              city='Berkeley',
+              state_province='CA',
+              country='U.S.A.',
+              ebsite='http://www.apress.com/')
+			  
+p.save()
+
+#--Selecting Objects
+
+# All data
+	Publisher.objects.all()
+	
+# Sub set of data
+	Publisher.objects.filter(name="Apress Publishing")
+	
+# multiple arguments into filter() to narrow down things further:
+	Publisher.objects.filter(country="U.S.A.", state_province="CA")
+
+# like type
+	Publisher.objects.filter(name__contains="press")
+	
+#Many other types of lookups are available, including icontains (case-insensitive LIKE), startswith
+#and endswith, and range (SQL BETWEEN queries).
+	
+	
+#--Retrieving Single Objects
+	Publisher.objects.get(name="Apress Publishing")
+	
+#  Ordering Data
+	Publisher.objects.order_by("name")
+	
+# Slicing Data
+	Publisher.objects.all()[0]
+"""SELECT
+        id, name, address, city, state_province, country, website
+   FROM book_publisher
+ORDER BY name
+LIMIT 1;"""
