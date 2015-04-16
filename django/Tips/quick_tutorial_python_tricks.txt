@@ -1,0 +1,34 @@
+# Install pip from PowerShell
+    (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | python -
+
+# Install virtualenv
+    pip install virtualenv
+
+# Create a virtual project_environment
+    virtualenv directory_name
+
+# Intall Django
+    pip install django
+
+# Create a project on Django
+    django-admin.py startproject project_name
+
+# Create an app on Django
+    python manage.py startapp books
+
+
+# Validate models
+   python manage.py validate
+
+# See Sql from models
+    python manage.py sqlall model_name
+	
+# sincronyse models with Database
+    python manage.py syncdb
+	
+# make migrations ( new in python )
+    python manage.py makemigrations
+    python manage.py migrate
+	
+# Refresh code
+	python manage.py shell
