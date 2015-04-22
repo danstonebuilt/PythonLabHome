@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for webpylab project.
 
@@ -36,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contacts',
+    #'contacts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,8 +51,11 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_DIRS = (
-    #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+   # os.path.join(BASE_DIR, "templates").replace('\\', '/'),
+   'C:/Users/daniel.anselmo/Desktop/workstation/PythonLabHome/webpylab/webpylab/templates',
 )
+
+
 
 ROOT_URLCONF = 'webpylab.urls'
 
@@ -86,3 +90,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
