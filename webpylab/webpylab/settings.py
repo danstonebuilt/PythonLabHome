@@ -49,6 +49,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_DIRS = (
+    #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+)
+
 ROOT_URLCONF = 'webpylab.urls'
 
 WSGI_APPLICATION = 'webpylab.wsgi.application'
