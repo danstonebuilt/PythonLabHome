@@ -1,1 +1,24 @@
-k
+#Templates are Django Context objects
+
+#HTML
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Hello {{ user_name }}, this TEMPLATE seems to have worked</h1>
+</body>
+</html>
+
+# View
+
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.template import Context
+
+def hello_user_tplt(request):
+    c = get_template('hello.html')
+    html = c.render(Context({'user_name': __author__}))
+    return HttpResponse(html)

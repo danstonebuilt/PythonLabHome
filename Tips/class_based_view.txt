@@ -1,0 +1,33 @@
+#HTML
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Hello {{ user_name }}, this Class based view TEMPLATE seems to have worked</h1>
+</body>
+</html>
+
+#VIEW
+class HelloTemplate(TemplateView):
+    template_name = 'hello_class.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HelloTemplate, self).get_context_data(**kwargs)
+        context['user_name'] = __author__
+        return context
+		
+#URL
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+
+from webpylab.views.ex_views import hello_user, show_prj_dir, hello_user_tplt
+from webpylab.views.ex_views import HelloTemplate
+
+urlpatterns = patterns('',  
+   
+    url(r'^class_view/', HelloTemplate.as_view()),
+    url(r'^admin/', include(admin.site.urls)),
+)
