@@ -15,4 +15,6 @@ urlpatterns = patterns('',
     url(r'^tmp/', hello_user_tplt),
     url(r'^class_view/', HelloTemplate.as_view()),
     url(r'^admin/', include(admin.site.urls)),
+
+    (r'^article/', include('article.url')),
 )
