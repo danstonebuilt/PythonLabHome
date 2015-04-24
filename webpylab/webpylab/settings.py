@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_DIRS = (
    # os.path.join(BASE_DIR, "templates").replace('\\', '/'),
    'C:/Users/daniel.anselmo/Desktop/workstation/PythonLabHome/webpylab/webpylab/templates',
+   'C:/Users/daniel.anselmo/Desktop/workstation/PythonLabHome/webpylab/article/templates'
 )
 
 

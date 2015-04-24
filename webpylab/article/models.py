@@ -7,5 +7,9 @@ class Article(models.Model):
     pub_date = models.DateTimeField('Date Published')
     likes = models.IntegerField()
 
+    #@property
+
+    """
     def __unicode__(self):
         return '%' % self.title
+            """
