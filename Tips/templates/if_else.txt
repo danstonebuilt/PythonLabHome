@@ -1,0 +1,70 @@
+{% if today_is_weekend %}
+	<p>Welcome to the weekend!</p>
+{% endif %}
+
+An {% else %} tag is optional:
+
+{% if today_is_weekend %}
+	p>Welcome to the weekend!</p>
+{% else %}
+	<p>Get back to work.</p>
+{% endif %}
+
+Python “Truthiness”
+In Python, the empty list ([]), tuple (()), dictionary ({}), string (''), zero (0), and the special object None
+are False in a Boolean context. Everything else is True.
+
+The {% if %} tag accepts and, or, or not for testing multiple variables, or to negate a given variable. For
+example:
+
+{% if athlete_list and coach_list %}
+	Both athletes and coaches are available.
+{% endif %}
+
+{% if not athlete_list %}
+	There are no athletes.
+{% endif %}
+
+{% if athlete_list or coach_list %}
+	There are some athletes or some coaches.
+{% endif %}
+
+{% if not athlete_list or coach_list %}
+	There are no athletes or there are some coaches. (OK, so
+	writing English translations of Boolean logic sounds
+	stupid; it's not our fault.)
+{% endif %}
+
+{% if athlete_list and not coach_list %}
+	There are some athletes and absolutely no coaches.
+{% endif %}
+
+{% if %} tags don’t allow and and or clauses within the same tag, because the order of logic would be
+ambiguous. For example, this is invalid:
+
+{% if athlete_list and coach_list or cheerleader_list %}
+
+The use of parentheses for controlling order of operations is not supported. If you find yourself needing
+parentheses, consider performing logic in the view code in order to simplify the templates. Even so, if you
+need to combine and and or to do advanced logic, just use nested {% if %} tags, for example:
+
+{% if athlete_list %}
+	{% if coach_list or cheerleader_list %}
+	We have athletes, and either coaches or cheerleaders!
+	{% endif %}
+{% endif %}
+
+Multiple uses of the same logical operator are fine, but you can’t combine different operators. For example,
+this is valid:
+
+{% if athlete_list or coach_list or parent_list or teacher_list %}
+
+There is no {% elif %} tag. Use nested {% if %} tags to accomplish the same thing:
+{% if athlete_list %}
+	<p>Here are the athletes: {{ athlete_list }}.</p>
+{% else %}
+	<p>No athletes are available.</p>
+	{% if coach_list %}
+		<p>Here are the coaches: {{ coach_list }}.</p>
+	{% endif %}
+{% endif %}
