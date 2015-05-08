@@ -1,0 +1,14 @@
+Just as in HTML or in a programming language such as Python, the Django template language allows for
+comments. To designate a comment, use {# #}:
+
+{# This is a comment #}
+
+The comment will not be output when the template is rendered.
+
+A comment cannot span multiple lines. This limitation improves template parsing performance. In the
+following template, the rendered output will look exactly the same as the template (i.e., the comment tag will
+not be parsed as a comment):
+
+This is a {# this is not
+a comment #}
+test.

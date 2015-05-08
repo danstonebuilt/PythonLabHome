@@ -1,0 +1,48 @@
+The Django template system deliberately is not a full-fledged programming language and thus does not allow
+you to execute arbitrary Python statements. (More on this idea in the section “Philosophies and Limitations.”)
+However, it’s quite a common template requirement to compare two values and display something if they’re
+equal—and Django provides an {% ifequal %} tag for that purpose.
+
+The {% ifequal %} tag compares two values and displays everything between {% ifequal %} and {%
+endifequal %} if the values are equal.
+
+This example compares the template variables user and currentuser:
+
+{% ifequal user currentuser %}
+	<h1>Welcome!</h1>
+{% endifequal %}
+
+The arguments can be hard-coded strings, with either single or double quotes, so the following is valid:
+
+{% ifequal section 'sitenews' %}
+	<h1>Site News</h1>
+{% endifequal %}
+
+{% ifequal section "community" %}
+	<h1>Community</h1>
+{% endifequal %}
+
+Just like {% if %}, the {% ifequal %} tag supports an optional {% else %}:
+
+{% ifequal section 'sitenews' %}
+	<h1>Site News</h1>
+{% else %}
+	<h1>No News Here</h1>
+{% endifequal %}
+
+Only template variables, strings, integers, and decimal numbers are allowed as arguments to {% ifequal
+%}. These are valid examples:
+
+{% ifequal variable 1 %}
+{% ifequal variable 1.23 %}
+{% ifequal variable 'foo' %}
+{% ifequal variable "foo" %}
+
+Any other types of variables, such as Python dictionaries, lists, or Booleans, can’t be hard-coded in {%
+ifequal %}. These are invalid examples:
+
+{% ifequal variable True %}
+{% ifequal variable [1, 2, 3] %}
+{% ifequal variable {'key': 'value'} %}
+
+If you need to test whether something is true or false, use the {% if %} tags instead of {% ifequal %}.

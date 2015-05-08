@@ -1,0 +1,27 @@
+As explained earlier in this chapter, template filters are simple ways of altering the value of variables before
+they’re displayed. Filters look like this:
+
+{{ name|lower }}
+
+This displays the value of the {{ name }} variable after being filtered through the lower filter, which
+converts text to lowercase. Use a pipe (|) to apply a filter.
+
+Filters can be chained—that is, the output of one filter is applied to the next. Here’s a common idiom for
+escaping text contents, and then converting line breaks to <p> tags:
+
+{{ my_text|escape|linebreaks }}
+
+Some filters take arguments. A filter argument looks like this:
+
+{{ bio|truncatewords:"30" }}
+
+This displays the first 30 words of the bio variable. Filter arguments are always in double quotes.
+The following are a few of the most important filters; Appendix F covers the rest.
+
+	* addslashes: Adds a backslash before any backslash, single quote, or double quote. This is useful if
+	the produced text is included in a JavaScript string.·
+	* date: Formats a date or datetime object according to a format string given in the parameter, for
+    example:
+	
+	{{ pub_date|date:"F j, Y" }}
+	
