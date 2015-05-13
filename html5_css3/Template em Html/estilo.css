@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	padding: 0;
+	margin: 0;	
+	font-family: open sans;	
+}
+*{
+	padding: 0px;
+	border: 0px;	
+	list-style: none;
+}
+
+#wrapper{
+	width: 955px;
+	height: 2000px;
+	margin: 0 auto;
+		z-index:1;
+}
+
+#cabecalho{
+	width: 100%;
+	height: 180px;
+	position: relative;
+
+
+}
+
+.menu{
+	position: absolute;
+	right: 225px;
+	top: 55px;
+
+}
+
+.menu ul li{
+	display:inline;		
+	font-size: 18px;
+	border-bottom: 1px solid #CCC;
+
+}
+
+.logo{
+	position: absolute;
+	left: 50px;	
+
+}
+
+#conteudo{
+	width: 100%;
+	height: 400px;;
+
+}	
+
+#bg-conteudo{
+	width:100%;
+	height: 400px;
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #00A4D1),
+	color-stop(1, #00C5FC));
+	background-image: -o-linear-gradient(bottom, #00A4D1 0%, #00C5FC 100%);
+	background-image: -moz-linear-gradient(bottom, #00A4D1 0%, #00C5FC 100%);
+	background-image: -webkit-linear-gradient(bottom, #00A4D1 0%, #00C5FC 100%);
+	background-image: -ms-linear-gradient(bottom, #00A4D1 0%, #00C5FC 100%);
+	background-image: linear-gradient(to bottom, #00A4D1 0%, #00C5FC 100%);	
+	z-index: 999;
+	float: left;
+	position:relative;
+	top: 200px;
+}

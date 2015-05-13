@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     #url(r'^class_view/', HelloTemplate.as_view()),
     (r'^article/', include('article.url')),
     (r'^tst/', include('article.url')),
+    (r'^lab/', include('lab.url')),
     url(r'^admin/', include(admin.site.urls)),
 )
